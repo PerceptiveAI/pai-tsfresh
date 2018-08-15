@@ -27,7 +27,3 @@ if __name__ == '__main__':
                             'ipaddress==1.0.18', 'dask==0.18.2',
                             'distributed==1.18.3'],
           test_suite='setup.my_test_suite')
-
-
-
-
