@@ -1,24 +1,39 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
-"""
-    Setup file for tsfresh.
-
-    This file was generated with PyScaffold 2.5.6, a tool that easily
-    puts up a scaffold for your new Python project. Learn more under:
-    http://pyscaffold.readthedocs.org/
-"""
-
-import sys
-from setuptools import setup
+import unittest
+from setuptools import setup, find_packages
 
 
-def setup_package():
-    needs_sphinx = {'build_sphinx', 'upload_docs'}.intersection(sys.argv)
-    sphinx = ['sphinx', 'sphinx_rtd_theme'] if needs_sphinx else []
-    setup(version='0.50.0',
-          setup_requires=['six', 'pyscaffold>=2.5a0,<2.6a0'] + sphinx,
-          use_pyscaffold=True)
+def my_test_suite():
+    test_loader = unittest.TestLoader()
+    test_suite = test_loader.discover('tests', pattern='test_*.py')
+    return test_suite
 
 
-if __name__ == "__main__":
-    setup_package()
+if __name__ == '__main__':
+    setup(name='pai_common',
+          version='0.1.0',
+          url='https://github.com/PerceptiveAI/pai-tsfresh.git',
+          description='PerceptiveAI data-science common',
+          license='Private proprietary code of Perceptive AI ltd.',
+          # package_dir={'': 'pai_common'},
+          # packages=find_packages(where='pai_common'),
+          packages=find_packages(),
+          package_data={'': ['*.*']},
+          install_requires=['scikit-learn==0.19.2',
+                            'dask==0.18.2',
+                            'numpy==1.15.0',
+                            'pandas==0.23.4',
+                            'requests==2.19.1',
+                            'scipy==1.1.0',
+                            'statsmodels==0.8.0',
+                            'patsy==0.4.1',
+                            'future==0.16.0',
+                            'six==1.10.0',
+                            'tqdm==4.10.0',
+                            'ipaddress==1.0.18',
+                            'dask==0.18.2',
+                            'distributed==1.18.3'],
+          test_suite='setup.my_test_suite')
+
+
+
+
