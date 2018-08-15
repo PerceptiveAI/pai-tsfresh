@@ -9,10 +9,10 @@ def my_test_suite():
 
 
 if __name__ == '__main__':
-    setup(name='pai_common',
+    setup(name='pai_tsfresh',
           version='0.1.0',
           url='https://github.com/PerceptiveAI/pai-tsfresh.git',
-          description='PerceptiveAI data-science common',
+          description='PerceptiveAI frok for tsfresh',
           license='Private proprietary code of Perceptive AI ltd.',
           # package_dir={'': 'pai_common'},
           # packages=find_packages(where='pai_common'),
