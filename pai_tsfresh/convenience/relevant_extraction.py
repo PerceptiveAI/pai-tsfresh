@@ -5,7 +5,7 @@
 from __future__ import absolute_import
 import pandas as pd
 from pai_tsfresh.feature_extraction import extract_features
-from tsfresh import defaults
+from pai_tsfresh import defaults
 from pai_tsfresh.feature_selection import select_features
 from pai_tsfresh.utilities.dataframe_functions import restrict_input_to_index, impute
 
@@ -39,7 +39,7 @@ def extract_relevant_features(timeseries_container, y, X=None,
     ========
 
     >>> from pai_tsfresh.examples import load_robot_execution_failures
-    >>> from tsfresh import extract_relevant_features
+    >>> from pai_tsfresh import extract_relevant_features
     >>> df, y = load_robot_execution_failures()
     >>> X = extract_relevant_features(df, y, column_id='id', column_sort='time')
 
