@@ -4,10 +4,10 @@
 
 from __future__ import absolute_import
 import pandas as pd
-from tsfresh.feature_extraction import extract_features
+from pai_tsfresh.feature_extraction import extract_features
 from tsfresh import defaults
-from tsfresh.feature_selection import select_features
-from tsfresh.utilities.dataframe_functions import restrict_input_to_index, impute
+from pai_tsfresh.feature_selection import select_features
+from pai_tsfresh.utilities.dataframe_functions import restrict_input_to_index, impute
 
 
 def extract_relevant_features(timeseries_container, y, X=None,
@@ -38,7 +38,7 @@ def extract_relevant_features(timeseries_container, y, X=None,
     Examples
     ========
 
-    >>> from tsfresh.examples import load_robot_execution_failures
+    >>> from pai_tsfresh.examples import load_robot_execution_failures
     >>> from tsfresh import extract_relevant_features
     >>> df, y = load_robot_execution_failures()
     >>> X = extract_relevant_features(df, y, column_id='id', column_sort='time')

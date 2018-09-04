@@ -30,6 +30,6 @@ except ImportError:
 logging.getLogger(__name__).addHandler(NullHandler())
 
 
-from tsfresh.convenience.relevant_extraction import extract_relevant_features
-from tsfresh.feature_extraction import extract_features
-from tsfresh.feature_selection import select_features
+from pai_tsfresh.convenience.relevant_extraction import extract_relevant_features
+from pai_tsfresh.feature_extraction import extract_features
+from pai_tsfresh.feature_selection import select_features

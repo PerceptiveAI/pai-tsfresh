@@ -4,9 +4,9 @@
 
 import pandas as pd
 from sklearn.base import BaseEstimator, TransformerMixin
-import tsfresh.defaults
-from tsfresh.feature_extraction import extract_features
-from tsfresh.utilities.dataframe_functions import restrict_input_to_index
+import pai_tsfresh.defaults
+from pai_tsfresh.feature_extraction import extract_features
+from pai_tsfresh.utilities.dataframe_functions import restrict_input_to_index
 
 
 class FeatureAugmenter(BaseEstimator, TransformerMixin):
@@ -39,7 +39,7 @@ class FeatureAugmenter(BaseEstimator, TransformerMixin):
     You can then extract all the features from the time development of the shares, by using this estimator:
 
     >>> time_series = read_in_timeseries() # get the development of the shares
-    >>> from tsfresh.transformers import FeatureAugmenter
+    >>> from pai_tsfresh.transformers import FeatureAugmenter
     >>> augmenter = FeatureAugmenter()
     >>> augmenter.set_timeseries_container(time_series)
     >>> df_with_time_series_features = augmenter.transform(df)
@@ -58,13 +58,13 @@ class FeatureAugmenter(BaseEstimator, TransformerMixin):
     def __init__(self, default_fc_parameters=None,
                  kind_to_fc_parameters=None, column_id=None, column_sort=None,
                  column_kind=None, column_value=None, timeseries_container=None,
-                 chunksize=tsfresh.defaults.CHUNKSIZE,
-                 n_jobs=tsfresh.defaults.N_PROCESSES, show_warnings=tsfresh.defaults.SHOW_WARNINGS,
-                 disable_progressbar=tsfresh.defaults.DISABLE_PROGRESSBAR,
-                 impute_function=tsfresh.defaults.IMPUTE_FUNCTION,
-                 profile=tsfresh.defaults.PROFILING,
-                 profiling_filename=tsfresh.defaults.PROFILING_FILENAME,
-                 profiling_sorting=tsfresh.defaults.PROFILING_SORTING
+                 chunksize=pai_tsfresh.defaults.CHUNKSIZE,
+                 n_jobs=pai_tsfresh.defaults.N_PROCESSES, show_warnings=pai_tsfresh.defaults.SHOW_WARNINGS,
+                 disable_progressbar=pai_tsfresh.defaults.DISABLE_PROGRESSBAR,
+                 impute_function=pai_tsfresh.defaults.IMPUTE_FUNCTION,
+                 profile=pai_tsfresh.defaults.PROFILING,
+                 profiling_filename=pai_tsfresh.defaults.PROFILING_FILENAME,
+                 profiling_sorting=pai_tsfresh.defaults.PROFILING_SORTING
                  ):
         """
         Create a new FeatureAugmenter instance.

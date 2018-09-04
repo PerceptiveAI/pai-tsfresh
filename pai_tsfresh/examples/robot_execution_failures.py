@@ -50,7 +50,7 @@ def download_robot_execution_failures():
     Examples
     ========
 
-    >>> from tsfresh.examples import download_robot_execution_failures
+    >>> from pai_tsfresh.examples import download_robot_execution_failures
     >>> download_robot_execution_failures()
     """
     if os.path.exists(data_file_name):
@@ -82,7 +82,7 @@ def load_robot_execution_failures(multiclass=False):
     Examples
     ========
 
-    >>> from tsfresh.examples import load_robot_execution_failures
+    >>> from pai_tsfresh.examples import load_robot_execution_failures
     >>> df, y = load_robot_execution_failures()
     >>> print(df.shape)
     (1320, 8)

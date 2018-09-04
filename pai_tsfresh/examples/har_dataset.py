@@ -42,7 +42,7 @@ def download_har_dataset():
     Examples
     ========
 
-    >>> from tsfresh.examples import har_dataset
+    >>> from pai_tsfresh.examples import har_dataset
     >>> har_dataset.download_har_dataset()
     """
 

@@ -9,7 +9,7 @@ from pai_tsfresh import defaults
 from pai_tsfresh.feature_extraction.settings import from_columns
 from pai_tsfresh.transformers.feature_augmenter import FeatureAugmenter
 from pai_tsfresh.transformers.feature_selector import FeatureSelector
-from tsfresh.utilities.dataframe_functions import impute_dataframe_range, get_range_values_per_column
+from pai_tsfresh.utilities.dataframe_functions import impute_dataframe_range, get_range_values_per_column
 
 
 # Pro: It offers more control
@@ -60,7 +60,7 @@ class RelevantFeatureAugmenter(BaseEstimator, TransformerMixin):
     You can then extract all the relevant features from the time development of the shares, by using this estimator:
 
     >>> train_time_series, test_time_series = read_in_timeseries() # get the development of the shares
-    >>> from tsfresh.transformers import RelevantFeatureAugmenter
+    >>> from pai_tsfresh.transformers import RelevantFeatureAugmenter
     >>> augmenter = RelevantFeatureAugmenter()
     >>> augmenter.set_timeseries_container(train_time_series)
     >>> augmenter.fit(X_train, y_train)

@@ -55,7 +55,7 @@ def plot_results():
 
 
 def test_timing():
-    from tsfresh.examples.robot_execution_failures import download_robot_execution_failures, \
+    from pai_tsfresh.examples.robot_execution_failures import download_robot_execution_failures, \
         load_robot_execution_failures
     download_robot_execution_failures()
     df, y = load_robot_execution_failures()

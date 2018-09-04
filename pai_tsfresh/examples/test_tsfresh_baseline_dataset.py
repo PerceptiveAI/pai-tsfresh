@@ -24,7 +24,7 @@ def download_json_dataset():
     Examples
     ========
 
-    >>> from tsfresh.examples import test_tsfresh_baseline_dataset
+    >>> from pai_tsfresh.examples import test_tsfresh_baseline_dataset
     >>> download_json_dataset()
     """
 
