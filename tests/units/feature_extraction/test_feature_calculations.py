@@ -7,14 +7,14 @@ from __future__ import print_function
 from builtins import range
 from random import shuffle
 from unittest import TestCase
-from tsfresh.feature_extraction.feature_calculators import *
-from tsfresh.feature_extraction.feature_calculators import _get_length_sequences_where
-from tsfresh.feature_extraction.feature_calculators import _estimate_friedrich_coefficients
-from tsfresh.feature_extraction.feature_calculators import _aggregate_on_chunks
-from tsfresh.examples.driftbif_simulation import velocity
+from pai_tsfresh.feature_extraction.feature_calculators import *
+from pai_tsfresh.feature_extraction.feature_calculators import _get_length_sequences_where
+from pai_tsfresh.feature_extraction.feature_calculators import _estimate_friedrich_coefficients
+from pai_tsfresh.feature_extraction.feature_calculators import _aggregate_on_chunks
+from pai_tsfresh.examples.driftbif_simulation import velocity
 import six
 import math
-from tsfresh.feature_extraction.settings import ComprehensiveFCParameters
+from pai_tsfresh.feature_extraction.settings import ComprehensiveFCParameters
 
 
 class FeatureCalculationTestCase(TestCase):

@@ -7,7 +7,7 @@ import pandas as pd
 import pytest
 from future.utils import lrange
 
-from tsfresh.feature_selection.selection import select_features
+from pai_tsfresh.feature_selection.selection import select_features
 
 
 class TestSelectFeatures:

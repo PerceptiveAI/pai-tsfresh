@@ -11,7 +11,7 @@ from sklearn.exceptions import NotFittedError
 import numpy as np
 import numpy.testing as npt
 
-from tsfresh.transformers.per_column_imputer import PerColumnImputer
+from pai_tsfresh.transformers.per_column_imputer import PerColumnImputer
 
 
 class PerColumnImputerTestCase(TestCase):

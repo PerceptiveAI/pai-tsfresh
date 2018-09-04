@@ -13,12 +13,12 @@ import warnings
 import numpy as np
 import pandas as pd
 
-from tsfresh import defaults
-from tsfresh.feature_extraction import feature_calculators
-from tsfresh.feature_extraction.settings import ComprehensiveFCParameters
-from tsfresh.utilities import dataframe_functions, profiling
-from tsfresh.utilities.distribution import MapDistributor, MultiprocessingDistributor, DistributorBaseClass
-from tsfresh.utilities.string_manipulation import convert_to_output_format
+from pai_tsfresh import defaults
+from pai_tsfresh.feature_extraction import feature_calculators
+from pai_tsfresh.feature_extraction.settings import ComprehensiveFCParameters
+from pai_tsfresh.utilities import dataframe_functions, profiling
+from pai_tsfresh.utilities.distribution import MapDistributor, MultiprocessingDistributor, DistributorBaseClass
+from pai_tsfresh.utilities.string_manipulation import convert_to_output_format
 
 _logger = logging.getLogger(__name__)
 
@@ -54,8 +54,8 @@ def extract_features(timeseries_container, default_fc_parameters=None,
     Examples
     ========
 
-    >>> from tsfresh.examples import load_robot_execution_failures
-    >>> from tsfresh import extract_features
+    >>> from pai_tsfresh.examples import load_robot_execution_failures
+    >>> from pai_tsfresh import extract_features
     >>> df, _ = load_robot_execution_failures()
     >>> X = extract_features(df, column_id='id', column_sort='time')
 

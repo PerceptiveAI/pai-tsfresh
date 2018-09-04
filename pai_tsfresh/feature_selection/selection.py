@@ -11,9 +11,9 @@ from __future__ import absolute_import
 import logging
 import pandas as pd
 import numpy as np
-from tsfresh import defaults
-from tsfresh.utilities.dataframe_functions import check_for_nans_in_columns
-from tsfresh.feature_selection.relevance import calculate_relevance_table
+from pai_tsfresh import defaults
+from pai_tsfresh.utilities.dataframe_functions import check_for_nans_in_columns
+from pai_tsfresh.feature_selection.relevance import calculate_relevance_table
 
 
 _logger = logging.getLogger(__name__)
@@ -69,8 +69,8 @@ def select_features(X, y, test_for_binary_target_binary_feature=defaults.TEST_FO
     Examples
     ========
 
-    >>> from tsfresh.examples import load_robot_execution_failures
-    >>> from tsfresh import extract_features, select_features
+    >>> from pai_tsfresh.examples import load_robot_execution_failures
+    >>> from pai_tsfresh import extract_features, select_features
     >>> df, y = load_robot_execution_failures()
     >>> X_extracted = extract_features(df, column_id='id', column_sort='time')
     >>> X_selected = select_features(X_extracted, y)

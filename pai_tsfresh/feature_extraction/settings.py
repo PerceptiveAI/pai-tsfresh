@@ -16,8 +16,8 @@ from past.builtins import basestring
 
 from itertools import product
 
-from tsfresh.feature_extraction import feature_calculators
-from tsfresh.utilities.string_manipulation import get_config_from_string
+from pai_tsfresh.feature_extraction import feature_calculators
+from pai_tsfresh.utilities.string_manipulation import get_config_from_string
 
 
 def from_columns(columns, columns_to_ignore=[]):
@@ -93,7 +93,7 @@ class ComprehensiveFCParameters(dict):
 
     You can use the settings object with
 
-    >>> from tsfresh.feature_extraction import extract_features, ComprehensiveFCParameters
+    >>> from pai_tsfresh.feature_extraction import extract_features, ComprehensiveFCParameters
     >>> extract_features(df, default_fc_parameters=ComprehensiveFCParameters())
 
     to extract all features (which is the default nevertheless) or you change the ComprehensiveFCParameters
@@ -161,7 +161,7 @@ class MinimalFCParameters(ComprehensiveFCParameters):
 
     You should use this object when calling the extract function, like so:
 
-    >>> from tsfresh.feature_extraction import extract_features, MinimalFCParameters
+    >>> from pai_tsfresh.feature_extraction import extract_features, MinimalFCParameters
     >>> extract_features(df, default_fc_parameters=MinimalFCParameters())
     """
 
@@ -183,7 +183,7 @@ class EfficientFCParameters(ComprehensiveFCParameters):
 
     You should use this object when calling the extract function, like so:
 
-    >>> from tsfresh.feature_extraction import extract_features, EfficientFCParameters
+    >>> from pai_tsfresh.feature_extraction import extract_features, EfficientFCParameters
     >>> extract_features(df, default_fc_parameters=EfficientFCParameters())
     """
 

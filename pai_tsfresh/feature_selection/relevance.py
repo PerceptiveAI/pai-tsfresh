@@ -20,9 +20,9 @@ import os
 import pandas as pd
 from functools import partial, reduce
 
-from tsfresh import defaults
-from tsfresh.feature_selection.benjamini_hochberg_test import benjamini_hochberg_test
-from tsfresh.feature_selection.significance_tests import target_binary_feature_real_test, \
+from pai_tsfresh import defaults
+from pai_tsfresh.feature_selection.benjamini_hochberg_test import benjamini_hochberg_test
+from pai_tsfresh.feature_selection.significance_tests import target_binary_feature_real_test, \
     target_real_feature_binary_test, target_real_feature_real_test, target_binary_feature_binary_test
 
 _logger = logging.getLogger(__name__)

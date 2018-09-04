@@ -4,7 +4,7 @@
 
 from sklearn.base import BaseEstimator, TransformerMixin
 from sklearn.exceptions import NotFittedError
-from tsfresh.utilities.dataframe_functions import get_range_values_per_column, impute_dataframe_range
+from pai_tsfresh.utilities.dataframe_functions import get_range_values_per_column, impute_dataframe_range
 import pandas as pd
 
 class PerColumnImputer(BaseEstimator, TransformerMixin):

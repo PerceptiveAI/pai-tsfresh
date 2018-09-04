@@ -5,8 +5,8 @@
 from __future__ import print_function
 import pandas as pd
 from tests.fixtures import DataTestCase
-from tsfresh.feature_extraction.settings import ComprehensiveFCParameters
-from tsfresh.transformers import FeatureAugmenter
+from pai_tsfresh.feature_extraction.settings import ComprehensiveFCParameters
+from pai_tsfresh.transformers import FeatureAugmenter
 import six
 import numpy as np
 

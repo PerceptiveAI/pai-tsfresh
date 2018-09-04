@@ -6,7 +6,7 @@ import numpy as np
 import unittest
 import pandas as pd
 
-from tsfresh.examples.driftbif_simulation import velocity, load_driftbif, sample_tau
+from pai_tsfresh.examples.driftbif_simulation import velocity, load_driftbif, sample_tau
 
 
 class DriftBifSimlationTestCase(unittest.TestCase):

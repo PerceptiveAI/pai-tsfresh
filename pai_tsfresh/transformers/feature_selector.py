@@ -3,9 +3,9 @@
 # Maximilian Christ (maximilianchrist.com), Blue Yonder Gmbh, 2016
 
 import pandas as pd
-from tsfresh import defaults
+from pai_tsfresh import defaults
 from sklearn.base import BaseEstimator, TransformerMixin
-from tsfresh.feature_selection.relevance import calculate_relevance_table
+from pai_tsfresh.feature_selection.relevance import calculate_relevance_table
 
 
 class FeatureSelector(BaseEstimator, TransformerMixin):
@@ -30,7 +30,7 @@ class FeatureSelector(BaseEstimator, TransformerMixin):
 
     >>> import pandas as pd
     >>> X_train, y_train = pd.DataFrame(), pd.Series() # fill in with your features and target
-    >>> from tsfresh.transformers import FeatureSelector
+    >>> from pai_tsfresh.transformers import FeatureSelector
     >>> selector = FeatureSelector()
     >>> selector.fit(X_train, y_train)
 

@@ -5,7 +5,7 @@ import os
 import shutil
 import tempfile
 from unittest import TestCase
-from tsfresh.scripts import run_tsfresh
+from pai_tsfresh.scripts import run_tsfresh
 from mock import patch
 
 

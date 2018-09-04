@@ -3,7 +3,7 @@
 # Maximilian Christ (maximilianchrist.com), Blue Yonder Gmbh, 2016
 
 from __future__ import print_function
-from tsfresh.utilities.string_manipulation import convert_to_output_format
+from pai_tsfresh.utilities.string_manipulation import convert_to_output_format
 
 
 from unittest import TestCase

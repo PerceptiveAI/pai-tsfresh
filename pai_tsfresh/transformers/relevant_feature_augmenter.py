@@ -5,10 +5,10 @@ from functools import partial
 
 import pandas as pd
 from sklearn.base import BaseEstimator, TransformerMixin
-from tsfresh import defaults
-from tsfresh.feature_extraction.settings import from_columns
-from tsfresh.transformers.feature_augmenter import FeatureAugmenter
-from tsfresh.transformers.feature_selector import FeatureSelector
+from pai_tsfresh import defaults
+from pai_tsfresh.feature_extraction.settings import from_columns
+from pai_tsfresh.transformers.feature_augmenter import FeatureAugmenter
+from pai_tsfresh.transformers.feature_selector import FeatureSelector
 from tsfresh.utilities.dataframe_functions import impute_dataframe_range, get_range_values_per_column
 
 

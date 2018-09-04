@@ -7,4 +7,4 @@ approach that inspects the significance of the features individually to avoid ov
 """
 
 
-from tsfresh.feature_selection.selection import select_features
+from pai_tsfresh.feature_selection.selection import select_features
