@@ -4,9 +4,9 @@
 
 from __future__ import absolute_import, division
 from tests.fixtures import DataTestCase
-from tsfresh import extract_features, select_features, extract_relevant_features
-from tsfresh.feature_extraction.settings import ComprehensiveFCParameters
-from tsfresh.utilities.dataframe_functions import impute
+from pai_tsfresh import extract_features, select_features, extract_relevant_features
+from pai_tsfresh.feature_extraction.settings import ComprehensiveFCParameters
+from pai_tsfresh.utilities.dataframe_functions import impute
 from unittest import TestCase
 import numpy as np
 import pandas.util.testing as pdt

@@ -2,8 +2,8 @@ import pytest
 import numpy as np
 import pandas as pd
 
-from tsfresh.defaults import TEST_FOR_BINARY_TARGET_REAL_FEATURE
-from tsfresh.feature_selection.significance_tests import target_binary_feature_binary_test, \
+from pai_tsfresh.defaults import TEST_FOR_BINARY_TARGET_REAL_FEATURE
+from pai_tsfresh.feature_selection.significance_tests import target_binary_feature_binary_test, \
     target_binary_feature_real_test, target_real_feature_real_test, target_real_feature_binary_test
 
 

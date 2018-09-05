@@ -12,12 +12,12 @@ import six
 from mock import Mock
 
 from tests.fixtures import DataTestCase
-from tsfresh.feature_extraction.extraction import extract_features
-from tsfresh.feature_extraction.settings import ComprehensiveFCParameters
+from pai_tsfresh.feature_extraction.extraction import extract_features
+from pai_tsfresh.feature_extraction.settings import ComprehensiveFCParameters
 
 import tempfile
 
-from tsfresh.utilities.distribution import DistributorBaseClass
+from pai_tsfresh.utilities.distribution import DistributorBaseClass
 
 
 class ExtractionTestCase(DataTestCase):

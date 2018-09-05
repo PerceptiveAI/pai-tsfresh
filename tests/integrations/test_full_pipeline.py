@@ -5,8 +5,8 @@
 from unittest import TestCase
 import pandas as pd
 from sklearn.pipeline import Pipeline
-from tsfresh.examples.robot_execution_failures import load_robot_execution_failures, download_robot_execution_failures
-from tsfresh.transformers import RelevantFeatureAugmenter
+from pai_tsfresh.examples.robot_execution_failures import load_robot_execution_failures, download_robot_execution_failures
+from pai_tsfresh.transformers import RelevantFeatureAugmenter
 
 
 class FullPipelineTestCase_robot_failures(TestCase):

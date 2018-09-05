@@ -6,7 +6,7 @@ import pandas as pd
 import numpy as np
 from tests.fixtures import DataTestCase
 import mock
-from tsfresh.transformers.relevant_feature_augmenter import RelevantFeatureAugmenter
+from pai_tsfresh.transformers.relevant_feature_augmenter import RelevantFeatureAugmenter
 
 
 class RelevantFeatureAugmenterTestCase(DataTestCase):

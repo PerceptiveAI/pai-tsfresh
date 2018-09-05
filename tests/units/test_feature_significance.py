@@ -5,7 +5,7 @@
 import numpy as np
 import pandas as pd
 from unittest import TestCase
-from tsfresh.feature_selection.relevance import calculate_relevance_table
+from pai_tsfresh.feature_selection.relevance import calculate_relevance_table
 
 
 class FeatureSignificanceTestCase(TestCase):

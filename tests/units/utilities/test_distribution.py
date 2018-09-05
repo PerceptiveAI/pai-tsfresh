@@ -6,8 +6,8 @@ from unittest import TestCase
 import numpy as np
 import pandas as pd
 
-from tsfresh import extract_features
-from tsfresh.utilities.distribution import MultiprocessingDistributor, LocalDaskDistributor
+from pai_tsfresh import extract_features
+from pai_tsfresh.utilities.distribution import MultiprocessingDistributor, LocalDaskDistributor
 from tests.fixtures import DataTestCase
 
 

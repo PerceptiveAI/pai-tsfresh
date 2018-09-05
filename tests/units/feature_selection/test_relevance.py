@@ -8,7 +8,7 @@ import pytest
 import mock
 import warnings
 
-from tsfresh.feature_selection.relevance import infer_ml_task, calculate_relevance_table, combine_relevance_tables, \
+from pai_tsfresh.feature_selection.relevance import infer_ml_task, calculate_relevance_table, combine_relevance_tables, \
     get_feature_type
 
 

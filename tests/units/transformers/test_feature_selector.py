@@ -8,7 +8,7 @@ import pandas as pd
 
 import numpy as np
 
-from tsfresh.transformers.feature_selector import FeatureSelector
+from pai_tsfresh.transformers.feature_selector import FeatureSelector
 
 class FeatureSelectorTestCase(TestCase):
     def setUp(self):
