@@ -58,13 +58,13 @@ class FeatureAugmenter(BaseEstimator, TransformerMixin):
     def __init__(self, default_fc_parameters=None,
                  kind_to_fc_parameters=None, column_id=None, column_sort=None,
                  column_kind=None, column_value=None, timeseries_container=None,
-                 chunksize=tsfresh.defaults.CHUNKSIZE,
-                 n_jobs=tsfresh.defaults.N_PROCESSES, show_warnings=tsfresh.defaults.SHOW_WARNINGS,
-                 disable_progressbar=tsfresh.defaults.DISABLE_PROGRESSBAR,
-                 impute_function=tsfresh.defaults.IMPUTE_FUNCTION,
-                 profile=tsfresh.defaults.PROFILING,
-                 profiling_filename=tsfresh.defaults.PROFILING_FILENAME,
-                 profiling_sorting=tsfresh.defaults.PROFILING_SORTING
+                 chunksize=pai_tsfresh.defaults.CHUNKSIZE,
+                 n_jobs=pai_tsfresh.defaults.N_PROCESSES, show_warnings=pai_tsfresh.defaults.SHOW_WARNINGS,
+                 disable_progressbar=pai_tsfresh.defaults.DISABLE_PROGRESSBAR,
+                 impute_function=pai_tsfresh.defaults.IMPUTE_FUNCTION,
+                 profile=pai_tsfresh.defaults.PROFILING,
+                 profiling_filename=pai_tsfresh.defaults.PROFILING_FILENAME,
+                 profiling_sorting=pai_tsfresh.defaults.PROFILING_SORTING
                  ):
         """
         Create a new FeatureAugmenter instance.
