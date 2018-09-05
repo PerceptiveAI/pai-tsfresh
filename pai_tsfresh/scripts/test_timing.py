@@ -8,7 +8,7 @@ from subprocess import check_output
 
 
 def test_with_length(length, df):
-    from tsfresh import extract_features
+    from pai_tsfresh import extract_features
 
     start = time.time()
     df = extract_features(df[:length], column_id='id', column_sort='time')
