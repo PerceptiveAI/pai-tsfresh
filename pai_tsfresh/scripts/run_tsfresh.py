@@ -22,7 +22,7 @@ There are a few limitations though
 
 import pandas as pd
 import sys
-from tsfresh import extract_features
+from pai_tsfresh import extract_features
 import argparse
 import os
 
