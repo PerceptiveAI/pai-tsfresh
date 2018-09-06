@@ -196,25 +196,16 @@ def _do_extraction(df, column_id, column_value, column_kind,
     data_in_chunks = []
     print_out_per = 5000
     count = 0
-    last_count = 0
-    last_print_out = 0
     # for names, group in df.groupby([column_id, column_kind])[column_value]:
     print('Grouping dataframe')
     grouped = df.groupby([column_id, column_kind])[column_value]
     print('Dataframe grouped OK')
-    for names, group in grouped:
-        print_out = False
+    for names, group in df.groupby([column_id, column_kind])[column_value]:
         count += 1
         id_name = names[0]
         var_name = names[1]
         data_in_chunks.append((id_name, str(var_name), group))
-        if count == print_out_per:
-            last_print_out = print_out_per
-            print_out = True
-        if count == (last_print_out + print_out_per):
-            last_print_out = count
-            print_out = True
-        if print_out:
+        if count % print_out_per == 0:
             list_length = len(data_in_chunks)
             list_size = sys.getsizeof(data_in_chunks)
             list_chars = len(str(data_in_chunks))
