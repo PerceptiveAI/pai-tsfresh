@@ -194,16 +194,21 @@ def _do_extraction(df, column_id, column_value, column_kind,
     # data_in_chunks = [x + (y,) for x, y in df.groupby([column_id, column_kind])[column_value]]
     import sys
     data_in_chunks = []
-    print_out_per = 5000
+    print_out_per = 10000
     count = 0
     # for names, group in df.groupby([column_id, column_kind])[column_value]:
-    print('Grouping dataframe')
     grouped = df.groupby([column_id, column_kind])[column_value]
     print('Dataframe grouped OK')
-    for names, group in df.groupby([column_id, column_kind])[column_value]:
+    print('Dataframe grouped keys length :: %s' % str(len(grouped.groups.keys())))
+#    for names, group in grouped:
+#        count += 1
+#        id_name = names[0]
+#        var_name = names[1]
+    for i, key in enumerate(grouped.groups.keys()):
         count += 1
-        id_name = names[0]
-        var_name = names[1]
+        group = grouped.get_group(key)
+        id_name = str(key[0])
+        var_name = str(key[1])
         data_in_chunks.append((id_name, str(var_name), group))
         if count % print_out_per == 0:
             list_length = len(data_in_chunks)
@@ -211,6 +216,7 @@ def _do_extraction(df, column_id, column_value, column_kind,
             list_chars = len(str(data_in_chunks))
             print('debug :: data_in_chunks :: length %s, size %s, number of chars %s' % (
                 str(list_length), str(list_size), str(list_chars)))
+            print(id_name, str(var_name), group)
 
     print('Created data_in_chunks list, OK')
 
