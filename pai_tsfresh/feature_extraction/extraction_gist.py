@@ -193,30 +193,81 @@ def _do_extraction(df, column_id, column_value, column_kind,
     print('Creating data_in_chunks list')
     # data_in_chunks = [x + (y,) for x, y in df.groupby([column_id, column_kind])[column_value]]
     import sys
-    data_in_chunks = []
-    print_out_per = 10000
-    count = 0
+    import traceback
+
+    # Get some info about the dataframe in terms of the BlockManager mapping
+    # between the row and column indexes and the actual blocks. Each type has a
+    # specialized class in the pandas.core.internals module. Pandas uses the
+    # ObjectBlock class to represent the block containing string columns, and
+    # the FloatBlock class to represent the block containing float columns. For
+    # blocks representing numeric values like integers and floats, pandas
+    # combines the columns and stores them as a NumPy ndarray. The NumPy ndarray
+    # is built around a C array, and the values are stored in a contiguous block
+    # of memory.  Because each data type is stored separately, we can examine
+    # the memory usage by data type. as per
+    # https://www.dataquest.io/blog/pandas-big-data/
+    for dtype in ['float', 'int', 'object']:
+        try:
+            selected_dtype = df.select_dtypes(include=[dtype])
+            mean_usage_b = selected_dtype.memory_usage(deep=True).mean()
+            mean_usage_mb = mean_usage_b / 1024 ** 2
+            print('debug :: average memory usage for {} columns in df: {:03.2f} MB'.format(dtype, mean_usage_mb))
+        except:
+            print('debug :: could not determine average memory usage for {} columns in df')
+
     # for names, group in df.groupby([column_id, column_kind])[column_value]:
     grouped = df.groupby([column_id, column_kind])[column_value]
     print('Dataframe grouped OK')
-    print('Dataframe grouped keys length :: %s' % str(len(grouped.groups.keys())))
+
+    # It broke here last time, so instead of accessing the dataframe, let us
+    # just try and get it's size
+    # print('Dataframe grouped keys length :: %s' % str(len(grouped.groups.keys())))
+    print('Getting dataframe grouped size')
+    grouped_size = None
+    try:
+        grouped_size = sys.getsizeof(grouped)
+    except:
+        print(traceback.format_exc())
+        print('error :: failed to execute sys.getsizeof(grouped)')
+    print('Dataframe grouped size :: %s' % str(grouped_size))
+
 #    for names, group in grouped:
 #        count += 1
 #        id_name = names[0]
 #        var_name = names[1]
-    for i, key in enumerate(grouped.groups.keys()):
-        count += 1
-        group = grouped.get_group(key)
-        id_name = str(key[0])
-        var_name = str(key[1])
-        data_in_chunks.append((id_name, str(var_name), group))
-        if count % print_out_per == 0:
-            list_length = len(data_in_chunks)
-            list_size = sys.getsizeof(data_in_chunks)
-            list_chars = len(str(data_in_chunks))
-            print('debug :: data_in_chunks :: length %s, size %s, number of chars %s' % (
-                str(list_length), str(list_size), str(list_chars)))
-            print(id_name, str(var_name), group)
+    data_in_chunks = []
+    print_out_per = 5000
+    count = 0
+    print('debug :: Enumerating keys in grouped Dataframe, expecting it may break here')
+    try:
+        for i, key in enumerate(grouped.groups.keys()):
+            count += 1
+            try:
+                group = grouped.get_group(key)
+            except:
+                print(traceback.format_exc())
+                print('error :: failed to grouped.get_group(%s)' % str(key))
+            try:
+                id_name = str(key[0])
+                var_name = str(key[1])
+                data_in_chunks.append((id_name, str(var_name), group))
+            except:
+                print(traceback.format_exc())
+                print('error :: failed to add data for key %s to data_in_chunks list' % str(key))
+
+            if count % print_out_per == 0:
+                try:
+                    list_length = len(data_in_chunks)
+                    list_size = sys.getsizeof(data_in_chunks)
+                    list_chars = len(str(data_in_chunks))
+                    print('debug :: data_in_chunks :: length %s, size %s, number of chars %s' % (
+                        str(list_length), str(list_size), str(list_chars)))
+                except:
+                    print(traceback.format_exc())
+                    print('error :: failed to print data_in_chunks info at key %s' % str(key))
+    except:
+        print(traceback.format_exc())
+        print('error :: failed to enumerate keys in grouped Dataframe')
 
     print('Created data_in_chunks list, OK')
 
