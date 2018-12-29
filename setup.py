@@ -23,7 +23,7 @@ if __name__ == '__main__':
                             'pandas==0.23.4', 'requests==2.19.1',
                             'scipy==1.1.0', 'statsmodels==0.8.0',
                             'patsy==0.4.1', 'future==0.16.0',
-                            'six==1.11.0', 'tqdm==4.10.0',
+                            'six==1.12.0', 'tqdm==4.10.0',
                             'ipaddress==1.0.18',
                             'distributed==1.18.3'],
           test_suite='setup.my_test_suite')
