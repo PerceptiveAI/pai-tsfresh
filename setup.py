@@ -19,7 +19,7 @@ if __name__ == '__main__':
           packages=find_packages(),
           package_data={'': ['*.*']},
           install_requires=['scikit-learn==0.20.0',
-                            'dask==0.19.4', 'numpy==1.15.0',
+                            'dask==2.9.1', 'numpy==1.15.0',
                             'pandas==0.23.4', 'requests==2.19.1',
                             'scipy==1.1.0', 'statsmodels==0.8.0',
                             'patsy==0.4.1', 'future==0.16.0',
