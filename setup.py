@@ -19,11 +19,13 @@ if __name__ == '__main__':
           packages=find_packages(),
           package_data={'': ['*.*']},
           install_requires=['scikit-learn==0.20.0',
-                            'dask==2.9.1', 'numpy==1.15.0',
+                            'dask==2.9.1', # not tested with new version, original: 'dask==0.19.4'
+                            'numpy==1.15.0',
                             'pandas==0.23.4', 'requests==2.19.1',
                             'scipy==1.1.0', 'statsmodels==0.8.0',
                             'patsy==0.4.1', 'future==0.16.0',
-                            'six==1.12.0', 'tqdm==4.10.0',
+                            'six==1.13.0', #  not tested with new version, original: 'six==1.12.0'
+                            'tqdm==4.10.0',
                             'ipaddress==1.0.18',
                             'distributed==1.18.3'],
           test_suite='setup.my_test_suite')
